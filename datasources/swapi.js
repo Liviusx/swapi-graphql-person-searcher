@@ -11,7 +11,7 @@ export class Swapi extends RESTDataSource {
     return data.results;
   }
 
-  async loadFromUrlList(urls) {
+  async loadChildren(urls) {
     if (typeof urls === "undefined") {
       throw new Error('You must pass a valid array!');
     }
