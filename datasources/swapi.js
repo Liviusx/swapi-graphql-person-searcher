@@ -7,7 +7,7 @@ export class Swapi extends RESTDataSource {
   }
 
   async getPersonByName(name) {
-    const data = await this.get(`people/?search=${name}`);
+    const data = await this.get(`people/?search=${encodeURIComponent(name)}`);
     return data.results;
   }
 
