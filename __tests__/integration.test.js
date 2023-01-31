@@ -5,13 +5,13 @@ import {jest} from '@jest/globals';
 // I've observed significant increase in response times
 jest.setTimeout(15000);
 
-describe('SearchCharacterByName', () => {
+describe('SearchCharacterByName',  () => {
     it(`searching “Darth Maul”, the films listed should be 
     “The Phantom Menace” and the vehicle model should be 
     “FC-20 speeder bike” `, async () => {
 
    
-        const testServer = createApolloServer();
+        const testServer = await createApolloServer();
 
         const query = `query ExampleQuery($name: String) {
             searchPerson(name: $name) {

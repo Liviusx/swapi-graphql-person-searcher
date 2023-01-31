@@ -7,8 +7,8 @@ export class Swapi extends RESTDataSource {
   }
 
   async getPersonByName(name) {
-    const data = await this.get(`people/?search=${encodeURIComponent(name)}`);
-    return data.results;
+    const data = this.get(`people/?search=${encodeURIComponent(name)}`);
+    return data;
   }
 
   async loadChildren(urls) {
@@ -16,12 +16,13 @@ export class Swapi extends RESTDataSource {
       throw new Error('You must pass a valid array!');
     }
 
-    const arrayOfResponses = await Promise.all(
+    const arrayOfResponses = Promise.all(
       urls.map((url) =>
         fetch(url)
           .then((res) => res.json())
       )
     );
+
     return arrayOfResponses;
   }
 }
