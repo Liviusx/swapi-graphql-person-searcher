@@ -16,13 +16,13 @@ export class Swapi extends RESTDataSource {
       throw new Error('You must pass a valid array!');
     }
 
-    const arrayOfResponses = Promise.all(
+    const promiseArrayOfResponses = Promise.all(
       urls.map((url) =>
         fetch(url)
           .then((res) => res.json())
       )
     );
 
-    return arrayOfResponses;
+    return promiseArrayOfResponses;
   }
 }
