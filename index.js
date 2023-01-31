@@ -3,7 +3,7 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 import { Swapi } from './datasources/swapi.js';
 import { createApolloServer } from './createApolloServer.js';
 
-const { url } = await startStandaloneServer(createApolloServer(), {
+const { url } = await startStandaloneServer(await createApolloServer(), {
   listen: { port: 4000 },
   context: async () => {
     return {
