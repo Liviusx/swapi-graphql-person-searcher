@@ -3,7 +3,7 @@ import {jest} from '@jest/globals';
 
 // Increasing timeout because at times
 // I've observed significant increase in response times
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 describe('SearchCharacterByName', () => {
     it(`searching “Darth Maul”, the films listed should be 

@@ -15,14 +15,10 @@ export const createApolloServer = () => {
         model: String,
         vehicle_class: String,
         manufacturer: String
-        pilots: [Person],
-        url: String
     }
 
     type Person {
         name: String,
-        hairColor: String,
-        birthYear: String,
         films: [Film]
         vehicles: [Vehicle],
         url: String
@@ -38,11 +34,7 @@ export const createApolloServer = () => {
                 return swapi.getPersonByName(name);
             }
         },
-
-        // Made the names with _ consistent
         Person: {
-            birthYear: (person) => person.birth_year,
-            hairColor: (person) => person.hair_color,
             vehicles: (person, _, context) => {
                 return swapi.loadChildren(person.vehicles);
             },

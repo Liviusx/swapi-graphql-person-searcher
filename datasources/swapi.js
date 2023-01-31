@@ -22,7 +22,6 @@ export class Swapi extends RESTDataSource {
           .then((res) => res.json())
       )
     );
-
     return arrayOfResponses;
   }
 }
