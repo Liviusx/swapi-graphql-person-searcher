@@ -7,7 +7,7 @@ export const createApolloServer = () => {
     const typeDefs = `#graphql
     type Film {
         title: String,
-        characters: [Person!]
+        characters: [Person]
     }
 
     type Vehicle {
@@ -15,7 +15,7 @@ export const createApolloServer = () => {
         model: String,
         vehicle_class: String,
         manufacturer: String
-        pilots: [Person!],
+        pilots: [Person],
         url: String
     }
 
@@ -23,8 +23,8 @@ export const createApolloServer = () => {
         name: String,
         hairColor: String,
         birthYear: String,
-        films: [Film!]
-        vehicles: [Vehicle!],
+        films: [Film]
+        vehicles: [Vehicle],
         url: String
     }
 

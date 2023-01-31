@@ -1,9 +1,16 @@
 import { createApolloServer } from "../createApolloServer.js";
+import {jest} from '@jest/globals';
+
+// Increasing timeout because at times
+// I've observed significant increase in response times
+jest.setTimeout(10000);
 
 describe('SearchCharacterByName', () => {
     it(`searching “Darth Maul”, the films listed should be 
     “The Phantom Menace” and the vehicle model should be 
     “FC-20 speeder bike” `, async () => {
+
+   
         const testServer = createApolloServer();
 
         const query = `query ExampleQuery($name: String) {

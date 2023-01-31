@@ -4,7 +4,7 @@ import { Swapi } from './datasources/swapi.js';
 import { createApolloServer } from './createApolloServer.js';
 
 const { url } = await startStandaloneServer(createApolloServer(), {
-  listen: { port: 4002 },
+  listen: { port: 4003 },
   context: async () => {
     return {
       dataSources: {
